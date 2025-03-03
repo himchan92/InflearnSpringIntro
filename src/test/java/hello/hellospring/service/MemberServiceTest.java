@@ -9,12 +9,14 @@ import hello.hellospring.repository.MemoryMemberRepository;
 import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    @Autowired
+    MemberService memberService;
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();
 
     @AfterEach
