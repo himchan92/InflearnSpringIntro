@@ -2,10 +2,11 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
+@Service //순수 자바코드는 스프링컨테이너가 인식하지 못해 명시해줘서 관리하게 명시하여 매핑
 public class MemberService {
 
   private final MemberRepository memberRepository;
