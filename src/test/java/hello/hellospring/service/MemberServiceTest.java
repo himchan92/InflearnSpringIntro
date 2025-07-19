@@ -11,12 +11,18 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
+@Transactional //변경작업 시 필수설정(디폴트 종료 시 자동롤백)
 class MemberServiceTest {
 
+  @Autowired
   MemberService memberService;
+
+  @Autowired
   MemoryMemberRepository memberRepository;
 
   //수행 전 생성자 DI 수행
